@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, Shield, Code2, Terminal } from "lucide-react";
+import MatrixRain from "./MatrixRain";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -28,18 +29,21 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center cyber-grid scanlines overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-background" />
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Matrix Rain Background */}
+      <MatrixRain />
+      
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background z-[1]" />
       
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 text-primary/20 animate-pulse">
+      <div className="absolute top-20 left-10 text-primary/20 animate-pulse z-[2]">
         <Code2 className="w-16 h-16" />
       </div>
-      <div className="absolute top-40 right-20 text-secondary/20 animate-pulse delay-500">
+      <div className="absolute top-40 right-20 text-secondary/20 animate-pulse delay-500 z-[2]">
         <Shield className="w-12 h-12" />
       </div>
-      <div className="absolute bottom-40 left-20 text-primary/20 animate-pulse delay-1000">
+      <div className="absolute bottom-40 left-20 text-primary/20 animate-pulse delay-1000 z-[2]">
         <Terminal className="w-10 h-10" />
       </div>
 
@@ -47,10 +51,10 @@ const Hero = () => {
         <div className="animate-slide-up">
           {/* Terminal Header */}
           <div className="inline-block mb-6">
-            <div className="bg-card border border-border rounded-t-lg px-4 py-2 flex items-center gap-2">
+            <div className="bg-card/80 backdrop-blur border border-border rounded-t-lg px-4 py-2 flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-destructive" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500" />
               <div className="w-3 h-3 rounded-full bg-primary" />
+              <div className="w-3 h-3 rounded-full bg-primary opacity-50" />
               <span className="ml-4 text-muted-foreground text-sm">~/rizwan-iqbal</span>
             </div>
           </div>
@@ -74,13 +78,13 @@ const Hero = () => {
               href="#projects"
               className="px-8 py-3 bg-primary text-primary-foreground font-bold uppercase tracking-wider border border-primary hover:bg-transparent hover:text-primary transition-all duration-300 animate-pulse-glow"
             >
-              View My Work
+              View Arsenal
             </a>
             <a
-              href="#contact"
+              href="#skills"
               className="px-8 py-3 bg-transparent text-secondary border border-secondary hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
             >
-              Get In Touch
+              Explore Skills
             </a>
           </div>
         </div>
