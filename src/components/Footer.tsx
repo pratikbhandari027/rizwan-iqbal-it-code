@@ -1,8 +1,6 @@
 import { Terminal, Heart } from "lucide-react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="py-8 border-t border-border bg-background">
       <div className="container mx-auto px-6">
@@ -18,7 +16,6 @@ const Footer = () => {
             <span className="text-primary">&lt;/&gt;</span>
             with
             <Heart className="w-4 h-4 text-destructive fill-current" />
-            © {currentYear}
           </p>
         </div>
       </div>
