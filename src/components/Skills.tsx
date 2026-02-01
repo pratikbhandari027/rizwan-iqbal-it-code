@@ -1,45 +1,85 @@
-import { Shield, Code, Database, Globe, Lock, Terminal, Server, Cpu } from "lucide-react";
+import { Shield, Code, Database, Globe, Lock, Terminal, Server, Cpu, Bug, Wifi, Key, Eye, FileCode, Layers, Cloud, Fingerprint } from "lucide-react";
 
 const skills = [
   {
     category: "Programming",
     icon: Code,
-    items: ["Python", "JavaScript", "TypeScript", "C++", "Rust", "Go"],
+    items: ["Python", "JavaScript", "TypeScript", "C++", "Rust", "Go", "Assembly", "Bash"],
   },
   {
-    category: "Cybersecurity",
+    category: "Penetration Testing",
     icon: Shield,
-    items: ["Penetration Testing", "Vulnerability Assessment", "Network Security", "Malware Analysis"],
+    items: ["Web App Testing", "Network Pentesting", "Mobile App Testing", "API Security", "Social Engineering"],
   },
   {
-    category: "Web Development",
+    category: "Exploit Development",
+    icon: Bug,
+    items: ["Buffer Overflow", "ROP Chains", "Shellcode", "Zero-Day Research", "Fuzzing"],
+  },
+  {
+    category: "Network Security",
+    icon: Wifi,
+    items: ["Packet Analysis", "MITM Attacks", "Firewall Bypass", "VPN Tunneling", "DNS Poisoning"],
+  },
+  {
+    category: "Web Security",
     icon: Globe,
-    items: ["React", "Node.js", "Next.js", "Django", "FastAPI", "GraphQL"],
+    items: ["XSS", "SQL Injection", "CSRF", "SSRF", "XXE", "Authentication Bypass"],
+  },
+  {
+    category: "Cryptography",
+    icon: Key,
+    items: ["Encryption/Decryption", "Hash Cracking", "PKI", "Steganography", "Protocol Analysis"],
+  },
+  {
+    category: "Reverse Engineering",
+    icon: Cpu,
+    items: ["Binary Analysis", "Malware Dissection", "Firmware Hacking", "Decompilation", "Debugging"],
+  },
+  {
+    category: "OSINT",
+    icon: Eye,
+    items: ["Reconnaissance", "Footprinting", "Social Media Intel", "Dark Web Research", "Threat Intel"],
   },
   {
     category: "Database",
     icon: Database,
-    items: ["PostgreSQL", "MongoDB", "Redis", "MySQL", "Elasticsearch"],
+    items: ["PostgreSQL", "MongoDB", "Redis", "MySQL", "Elasticsearch", "Data Exfiltration"],
   },
   {
-    category: "DevOps",
+    category: "DevSecOps",
     icon: Server,
-    items: ["Docker", "Kubernetes", "AWS", "CI/CD", "Terraform", "Linux"],
+    items: ["Docker", "Kubernetes", "CI/CD Security", "SAST/DAST", "Container Escape"],
+  },
+  {
+    category: "Cloud Security",
+    icon: Cloud,
+    items: ["AWS Security", "Azure Pentesting", "GCP Auditing", "S3 Misconfig", "IAM Exploitation"],
   },
   {
     category: "Security Tools",
     icon: Lock,
-    items: ["Burp Suite", "Metasploit", "Wireshark", "Nmap", "OWASP ZAP"],
-  },
-  {
-    category: "Systems",
-    icon: Cpu,
-    items: ["Reverse Engineering", "Binary Exploitation", "Firmware Analysis"],
+    items: ["Burp Suite", "Metasploit", "Wireshark", "Nmap", "Cobalt Strike", "Ghidra", "IDA Pro"],
   },
   {
     category: "Scripting",
     icon: Terminal,
-    items: ["Bash", "PowerShell", "Automation", "Web Scraping", "API Development"],
+    items: ["Automation", "Custom Exploits", "Web Scraping", "Bot Development", "Payload Crafting"],
+  },
+  {
+    category: "Web Development",
+    icon: FileCode,
+    items: ["React", "Node.js", "Django", "FastAPI", "GraphQL", "WebSockets"],
+  },
+  {
+    category: "Digital Forensics",
+    icon: Fingerprint,
+    items: ["Memory Forensics", "Disk Analysis", "Log Analysis", "Incident Response", "Evidence Collection"],
+  },
+  {
+    category: "System Exploitation",
+    icon: Layers,
+    items: ["Privilege Escalation", "Lateral Movement", "Persistence", "Rootkits", "Kernel Exploits"],
   },
 ];
 
@@ -52,31 +92,30 @@ const Skills = () => {
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
             <span className="text-primary">System.</span>
-            <span className="text-secondary">skills</span>
+            <span className="text-secondary">arsenal</span>
             <span className="text-primary">()</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive arsenal of tools and technologies for building and securing digital systems.
+            Comprehensive toolkit for offensive security, defensive operations, and everything in between.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="group p-6 bg-background border border-border rounded-lg hover:border-primary transition-all duration-300 hover:border-glow"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group p-5 bg-background border border-border rounded-lg hover:border-primary transition-all duration-300 hover:border-glow"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <skill.icon className="w-6 h-6 text-primary group-hover:animate-pulse" />
-                <h3 className="font-display font-semibold text-secondary">{skill.category}</h3>
+              <div className="flex items-center gap-3 mb-3">
+                <skill.icon className="w-5 h-5 text-primary group-hover:animate-pulse" />
+                <h3 className="font-display font-semibold text-secondary text-sm">{skill.category}</h3>
               </div>
               
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {skill.items.map((item, idx) => (
                   <li
                     key={idx}
-                    className="text-sm text-muted-foreground flex items-center gap-2"
+                    className="text-xs text-muted-foreground flex items-center gap-2"
                   >
                     <span className="text-primary text-xs">▹</span>
                     {item}
